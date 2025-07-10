@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap');
+
+:root {
+  --color-primary: hsl(212, 50%, 90%);
+  --color-secondary: hsl(212, 50%, 10%);
+  --color-tertiary: hsl(272, 80%, 20%);
+  --color-accent: hsl(152, 80%, 20%);
+}
+.dark {
+  --color-primary: hsl(212, 50%, 10%);
+  --color-secondary: hsl(212, 50%, 90%);
+  --color-tertiary: hsl(272, 80%, 80%);
+  --color-accent: hsl(152, 80%, 80%);
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Rubik', ui-sans-serif, system-ui, sans-serif;
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: none; }
+}
