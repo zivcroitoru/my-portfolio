@@ -1,6 +1,3 @@
-<script>
-  // Any necessary script can go here
-</script>
 
 <section class="max-w-4xl mx-auto px-4 py-16 min-h-[60vh] animate-fade-in bg-bg text-text">
   <h1 class="text-4xl md:text-5xl font-extrabold mb-8 tracking-tight leading-tight font-rubik text-primary">Education</h1>
