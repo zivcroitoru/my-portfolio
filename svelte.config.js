@@ -1,15 +1,21 @@
-import adapter from '@sveltejs/adapter-static';
+import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
+import adapter from "@sveltejs/adapter-static";
 
-const dev = process.env.NODE_ENV !== 'production';
-
-export default {
+/** @type {import('@sveltejs/kit').Config} */
+const config = {
+  preprocess: [vitePreprocess()],
   kit: {
-    adapter: adapter(),
+    adapter: adapter({
+      pages: "build",
+      assets: "build",
+      fallback: "404.html",
+      precompress: false,
+      strict: true,
+    }),
     paths: {
-      base: dev ? '' : '/my-portfolio',
-    },
-    prerender: {
-      default: true,
+      base: process.env.BASE_PATH,
     },
   },
 };
+
+export default config;
